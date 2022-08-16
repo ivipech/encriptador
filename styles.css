@@ -1,0 +1,177 @@
+* {
+  font-family: 'Inter', sans-serif;
+  color: #0a3871;
+}
+body {
+  background-color: #e5e5e5;
+}
+
+.logo {
+  width: 31.09px;
+  height: 48px;
+  margin: 3%;
+}
+
+.principal {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Area de poner el texto a desencriptar */
+
+.contenedor-texto {
+  height: 944px;
+  width: 65%;
+  margin: auto auto;
+}
+
+.texto-ingresado {
+  display: block;
+  width: 90%;
+  height: 60%;
+  margin: 10% auto 10px auto;
+  border: 0px;
+  background: none;
+  font-size: 32px;
+  text-align: initial;
+  padding: 20px;
+  overflow: auto;
+  outline: none;
+  resize: none;
+}
+
+.texto-ingresado::placeholder {
+  color: #0a3871;
+  font-size: 32px;
+}
+
+.texto-restriciones {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.restricciones {
+  display: inline;
+  width: 60%;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  width: 328px;
+  height: 67px;
+  border-radius: 24px;
+  border-color: #0a3871;
+  font-size: 20px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn.encriptar {
+  background-color: #0a3871;
+  color: white;
+}
+
+.encriptar:hover {
+  color: #0a3871;
+  background-color: white;
+}
+
+.btn.desencriptar.copiar {
+  color: #0a3871;
+}
+
+.btn.desencriptar {
+  background-color: #e5e5e5;
+}
+.desencriptar:hover {
+  color: #e5e5e5;
+  background-color: #0a3871;
+}
+
+/*Area donde se encuentra el texto esencriptado*/
+
+.contenedor-resultado {
+  width: 400px;
+  height: 944px;
+  background-color: white;
+  margin: 40px auto;
+  border-radius: 32px;
+}
+
+/*Area cuando no hay texto a descencriptar*/
+.contenedor-texto-no-encontrado {
+  display: grid;
+  height: 70%;
+  align-self: center;
+  margin-top: 20%;
+}
+
+.muneco {
+  align-self: center;
+  justify-self: center;
+}
+
+.mensajes {
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+  align-self: start;
+}
+.Mensaje1 {
+  text-align: center;
+  width: 80%;
+  height: fit-content;
+  justify-self: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.Mensaje2 {
+  text-align: center;
+  height: fit-content;
+  width: 80%;
+  justify-self: center;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/*Area cuando hubo texto desencriptadp*/
+
+.texto-encontrado {
+  width: 95%;
+  display: none;
+  margin: 40px auto;
+  height: 95%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.texto-resuelto {
+  width: 95%;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-left: 7px;
+  margin-right: auto;
+  height: 80%;
+  outline: none;
+  border: none;
+  font-size: 32px;
+  resize: none;
+}
+
+.btn.copiar {
+  background-color: white;
+  margin-left: 10%;
+}
+
+.copiar:hover {
+  background-color: #0a3871;
+  color: white;
+}
