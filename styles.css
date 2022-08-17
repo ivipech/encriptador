@@ -104,6 +104,7 @@ body {
   background-color: white;
   margin: 40px auto;
   border-radius: 32px;
+  box-shadow: 7px 20px 32px -12px rgba(0, 0, 0, 0.75);
 }
 
 /*Area cuando no hay texto a descencriptar*/
