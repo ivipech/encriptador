@@ -20,8 +20,6 @@ function hayMayusculas(palabra) {
   return false;
 }
 
-console.log(hayMayusculas('hola como estas'));
-
 function hayAcentos(palabra) {
   const caracteres = ['á', 'é', 'í', 'ó', 'ú'];
   for (let i = 0; i < palabra.length; i++) {
@@ -73,7 +71,6 @@ function remplazarVocales(word) {
 
 function encriptar() {
   if (hayMayusOAcentos(enteredText.value)) {
-    console.log('Hay mayusculas o acentos');
     restriccionesTexto.style.color = 'red';
   } else {
     restriccionesTexto.style.color = '#0a3871';
@@ -134,7 +131,6 @@ function reemplazarEncriptado(palabra) {
 
 function desencriptar() {
   if (hayMayusOAcentos(enteredText.value)) {
-    console.log('Hay mayusculas o caracteres especiales');
     restriccionesTexto.style.color = 'red';
   } else {
     restriccionesTexto.style.color = '#0a3871';
