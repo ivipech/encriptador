@@ -10,14 +10,17 @@ const cuadroNoencontrado = document.querySelector(
 const restriccionesTexto = document.querySelector('.ResText');
 
 function hayMayusculas(palabra) {
-  for (let i = 0; i < palabra.length; i++) {
-    if (palabra[i] === palabra[i].toUpperCase()) {
+  let word = palabra.replaceAll(' ', '');
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === word[i].toUpperCase()) {
       return true;
       break;
     }
   }
   return false;
 }
+
+console.log(hayMayusculas('hola como estas'));
 
 function hayAcentos(palabra) {
   const caracteres = ['á', 'é', 'í', 'ó', 'ú'];
@@ -29,8 +32,6 @@ function hayAcentos(palabra) {
   }
   return false;
 }
-
-console.log(hayAcentos('camión'));
 
 function hayMayusOAcentos(palabra) {
   if (hayMayusculas(palabra)) {
