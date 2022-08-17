@@ -31,14 +31,29 @@ function hayAcentos(palabra) {
   return false;
 }
 
-function hayMayusOAcentos(palabra) {
-  if (hayMayusculas(palabra)) {
+function hayCaracteres(palabra) {
+  const caracteres = ['!', '@', '$', '%', '^', '&', '*', '(', ')'];
+  for (let i = 0; i < palabra.length; i++) {
+    if (caracteres.includes(palabra[i])) {
+      return true;
+      break;
+    }
+  }
+  return false;
+}
+
+function hayMayusAcentosOcaracteres(palabra) {
+  if (hayCaracteres(palabra)) {
     return true;
   } else {
-    if (hayAcentos(palabra)) {
+    if (hayMayusculas(palabra)) {
       return true;
     } else {
-      return false;
+      if (hayAcentos(palabra)) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 }
@@ -70,7 +85,7 @@ function remplazarVocales(word) {
 }
 
 function encriptar() {
-  if (hayMayusOAcentos(enteredText.value)) {
+  if (hayMayusAcentosOcaracteres(enteredText.value)) {
     restriccionesTexto.style.color = 'red';
   } else {
     restriccionesTexto.style.color = '#0a3871';
@@ -172,7 +187,7 @@ function desencriptarPalabra(palabra) {
 }
 
 function desencriptar() {
-  if (hayMayusOAcentos(enteredText.value)) {
+  if (hayMayusAcentosOcaracteres(enteredText.value)) {
     restriccionesTexto.style.color = 'red';
   } else {
     restriccionesTexto.style.color = '#0a3871';
