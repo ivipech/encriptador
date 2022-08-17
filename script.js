@@ -93,34 +93,76 @@ function encriptar() {
   }
 }
 
-function reemplazarEncriptado(palabra) {
+function desencriptarPalabra(palabra) {
   const vocales = ['a', 'e', 'i', 'o', 'u'];
   let palabraConvertida = '';
   for (let i = 0; i < palabra.length; i++) {
     if (vocales.includes(palabra[i])) {
       switch (palabra[i]) {
         case 'a':
-          i++;
-          palabraConvertida = palabraConvertida + 'a';
+          if (palabra[i + 1] === 'i') {
+            i++;
+            palabraConvertida = palabraConvertida + 'a';
+          } else {
+            palabraConvertida = palabraConvertida + palabra[i];
+          }
           break;
         case 'e':
-          i = i + 4;
-          palabraConvertida = palabraConvertida + 'e';
+          // enter
+          if (
+            palabra[i + 1] === 'n' &&
+            palabra[i + 2] === 't' &&
+            palabra[i + 3] === 'e' &&
+            palabra[i + 4] === 'r'
+          ) {
+            i = i + 4;
+            palabraConvertida = palabraConvertida + 'e';
+          } else {
+            palabraConvertida = palabraConvertida + palabra[i];
+          }
           break;
         case 'i':
-          i = i + 3;
-          palabraConvertida = palabraConvertida + 'i';
+          //imes
+          if (
+            palabra[i + 1] === 'm' &&
+            palabra[i + 2] === 'e' &&
+            palabra[i + 3] === 's'
+          ) {
+            i = i + 3;
+            palabraConvertida = palabraConvertida + 'i';
+          } else {
+            palabraConvertida = palabraConvertida + palabra[i];
+          }
           break;
         case 'o':
-          i = i + 3;
-          palabraConvertida = palabraConvertida + 'o';
+          //ober
+          if (
+            palabra[i + 1] === 'b' &&
+            palabra[i + 2] === 'e' &&
+            palabra[i + 3] === 'r'
+          ) {
+            i = i + 3;
+            palabraConvertida = palabraConvertida + 'o';
+          } else {
+            palabraConvertida = palabraConvertida + palabra[i];
+          }
+
           break;
         case 'u':
-          i = i + 3;
-          palabraConvertida = palabraConvertida + 'u';
+          //ufat
+          if (
+            palabra[i + 1] === 'f' &&
+            palabra[i + 2] === 'a' &&
+            palabra[i + 3] === 't'
+          ) {
+            i = i + 3;
+            palabraConvertida = palabraConvertida + 'u';
+          } else {
+            palabraConvertida = palabraConvertida + palabra[i];
+          }
           break;
         default:
-          return letra;
+          return palabra[i];
       }
     } else {
       palabraConvertida = palabraConvertida + palabra[i];
@@ -141,7 +183,7 @@ function desencriptar() {
     } else {
       let texto = enteredText.value.split(' ');
       let textoConvertido = texto.map(function (word) {
-        return reemplazarEncriptado(word);
+        return desencriptarPalabra(word);
       });
 
       cuadroNoencontrado.style.display = 'none';
@@ -162,3 +204,29 @@ function copiarTexto() {
 btnEncriptar.onclick = encriptar;
 btnDesencriptar.onclick = desencriptar;
 btnCopiar.onclick = copiarTexto;
+
+/*
+¡Bienvenidos y Bienvenidas a nuestro primer desafío!
+
+Durante estas cuatro semanas, vamos a trabajar en una aplicación que encripta textos, así podrás intercambiar mensajes secretos con otras personas que sepan el secreto de la encriptación utilizada.
+
+Las "llaves" de encriptación que utilizaremos son las siguientes:
+
+La letra "e" es convertida para "enter"
+La letra "i" es convertida para "imes"
+La letra "a" es convertida para "ai"
+La letra "o" es convertida para "ober"
+La letra "u" es convertida para "ufat"
+
+Requisitos:
+- Debe funcionar solo con letras minúsculas
+- No deben ser utilizados letras con acentos ni caracteres especiales
+- Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
+
+Por ejemplo:
+"gato" => "gaitober"
+gaitober" => "gato"
+
+La página debe tener campos para
+inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre as dos opciones.
+El resultado debe ser mostrado en la pantalla.*/
